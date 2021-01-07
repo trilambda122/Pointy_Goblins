@@ -3,7 +3,7 @@ const cheerio = require("cheerio");
 const puppeteer = require("puppeteer");
 // main url for fetch all the html from
 // const url = 'https://www.vrbo.com/search/keywords:austin-texas-united-states-of-america/arrival:2020-12-22/departure:2021-01-27?petIncluded=false'
-
+// 
 // SAMPLE OUTPUT
 // {
 //   source: 'vrbo',
