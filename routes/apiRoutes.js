@@ -58,7 +58,7 @@ const getAllListings =  async (location)=>{
   const vrboData = await vrbo.getData(city)
   // console.log('---------VRBO---------')
   // console.log(vrboData)
-  // const sonderData = await sonder.getData(city)
+  const sonderData = await sonder.getData(city)
   // console.log('---------SONDERS---------')
   // console.log(sonderData)
 
@@ -67,7 +67,7 @@ const getAllListings =  async (location)=>{
   // console.log(airbnbData)
   allData.push(...airbnbData)
   allData.push(...vrboData)
-  // allData.push(...sonderData)
+  allData.push(...sonderData)
   return allData
 
 }
