@@ -42,8 +42,11 @@ async function getMainPage(url) {
       height: 2600,
       deviceScaleFactor: 1,
     });
-    await page.setDefaultNavigationTimeout(0);
-    await page.goto(url, { waitUntil: "networkidle0" });
+  
+    await page.goto(url, { 
+      waitUntil: "networkidle0",
+      timeout:0
+     });
     const data = await page.evaluate(
       () => document.querySelector("*").outerHTML
     );
