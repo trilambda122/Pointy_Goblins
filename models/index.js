@@ -1,4 +1,5 @@
 module.exports = {
     User: require("./User"),
-    FavoriteListing: require("./FavoriteListing")
+    FavoriteListing: require("./FavoriteListing"),
+    populateDatabase: require("./populateDatabase")
 };

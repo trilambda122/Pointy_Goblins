@@ -47,3 +47,4 @@ require("./routes/htmlRoutes")(app);
 app.listen(PORT, () => {
   console.log(`App is active at http://localhost:${PORT}`);
 });
+
