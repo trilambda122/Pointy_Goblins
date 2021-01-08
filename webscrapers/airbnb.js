@@ -18,13 +18,8 @@ const cheerio = require('cheerio');
 //   image: 'https://a0.muscache.com/im/pictures/4596765/80c96bbd_original.jpg?im_w=720'
 // }
 
-function getData(city){
-  console.log('------CITY---------')
-  console.log(city)
-
+function getData(city){  
   const url=`https://www.airbnb.com/s/${city}/homes?`
-  console.log('------URL---------')
-  console.log(url)
 return new Promise ((resolve,reject)=>{
   getMainPage(url).then((html)=>{
   const Obj = parseHTML(html)

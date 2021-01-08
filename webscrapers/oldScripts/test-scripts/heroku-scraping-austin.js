@@ -1,7 +1,7 @@
 const db = require("../models");
 const puppeteer = require("puppeteer");
 const vrboParse = require('./parse-vrbo')
-const airbnbParse = require('./parse-airbnb')
+const airbnb = require('./airbnb')
 const sonderParse = require('./parse-sonder')
 var mongoose = require("mongoose");
 
@@ -58,27 +58,36 @@ async function getData(city){
     () => document.querySelector("*").outerHTML
   );
 // open AIRBNB tab
-   const airbnbPage = await browser.newPage();
-   await airbnbPage.setViewport({
-     width: 1900,
-     height: 2600,
-     deviceScaleFactor: 1,
-   });
+  //  const airbnbPage = await browser.newPage();
+  //  await airbnbPage.setViewport({
+  //    width: 1900,
+  //    height: 2600,
+  //    deviceScaleFactor: 1,
+  //  });
 
-   await airbnbPage.goto(airbnbURL, { 
-    waitUntil: "networkidle0",
-    timeout:0
-   });
-   const airbnbHTML = await airbnbPage.evaluate(
-    () => document.querySelector("*").outerHTML
-  );
- 
+  //  await airbnbPage.goto(airbnbURL, { 
+  //   waitUntil: "networkidle0",
+  //   timeout:0
+  //  });
+  //  const airbnbHTML = await airbnbPage.evaluate(
+  //   () => document.querySelector("*").outerHTML
+  //  );
+
   await browser.close();
-const allResultsJSON=[]
+
+  const airbnbJSON = await airbnb.getData('austin')
+
+  const allResultsJSON=[]
+
+
+
+
+
+
 // parse the HTML from each of the results 
   const vrboJSON=vrboParse.parseHTML(vrboHTML)
   const sonderJSON=sonderParse.parseHTML(sonderHTML)
-  const airbnbJSON=airbnbParse.parseHTML(airbnbHTML)
+  // const airbnbJSON=airbnbParse.parseHTML(airbnbHTML)
  
 allResultsJSON.push(...vrboJSON)
 allResultsJSON.push(...sonderJSON)
