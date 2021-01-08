@@ -36,18 +36,18 @@ async function getMainPage(url) {
       headless: true,
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
-    const [page] = await browser.pages();
-    await page.setViewport({
+    const [vrboPage] = await browser.pages();
+    await vrboPage.setViewport({
       width: 1900,
       height: 2600,
       deviceScaleFactor: 1,
     });
   
-    await page.goto(url, { 
+    await vrboPage.goto(url, { 
       waitUntil: "networkidle0",
       timeout:0
      });
-    const data = await page.evaluate(
+    const data = await vrboPage.evaluate(
       () => document.querySelector("*").outerHTML
     );
 

@@ -7,4 +7,3 @@ const data = vrbo.getData('miami').then((data)=>{
 })
 
 
-

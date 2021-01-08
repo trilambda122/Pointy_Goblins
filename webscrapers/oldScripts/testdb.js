@@ -1,6 +1,6 @@
 const db = require("../models");
 var mongoose = require("mongoose");
-const { exists } = require("../models/User");
+
 
 
 const database = mongoose.connect(

@@ -1,5 +1,8 @@
 module.exports = {
     User: require("./User"),
     FavoriteListing: require("./FavoriteListing"),
-    populateDatabase: require("./populateDatabase")
+    Austin: require("./Austin"),
+    Boston: require("./Boston"),
+    Houston: require("./Houston"),
+    Denver: require("./Denver"),
 };
