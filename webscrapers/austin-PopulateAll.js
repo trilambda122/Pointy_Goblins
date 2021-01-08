@@ -1,5 +1,5 @@
 const vrbo = require('./vrbo');
-const airbnb = require('./airbnb');
+const airbnb = require('./airbnbV2');
 const sonder = require('./sonder')
 const db = require("../models");
 var mongoose = require("mongoose");
